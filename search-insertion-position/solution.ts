@@ -17,4 +17,11 @@ function searchInsert(nums: number[], target: number): number {
     return middle;
 };
 
-console.log(searchInsert([-1, 3, 5, 6], 0));
+function searchInsert2(nums: number[], target: number) {
+    let left: number = 0, right: number = nums.length;
+    while (left < right) {
+        let mid = left + Math.floor((right - left) / 2);
+        target > nums[mid] ? left = mid + 1 :  right = mid;
+    }
+    return left;
+}

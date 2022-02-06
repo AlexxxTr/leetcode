@@ -12,37 +12,37 @@ function mergeSort(arr: number[], start: number, end: number): void {
 }
 
 function merge(arr: number[], start: number, middle: number, end: number): void {
-    let n1 = middle - start + 1;
-    let n2 = end - middle;
+    let lengthSubArr1 = middle - start + 1;
+    let lenghtSubArr2 = end - middle;
 
-    let L: number[] = [];
-    let M: number[] = [];
+    let subArr1: number[] = [];
+    let subArr2: number[] = [];
 
-    for (let i = 0; i < n1; i++) 
-        L[i] = arr[start + i];
-    for (let i = 0; i < n2; i++)
-        M[i] = arr[middle + i + 1]
+    for (let i = 0; i < lengthSubArr1; i++) 
+        subArr1[i] = arr[start + i];
+    for (let i = 0; i < lenghtSubArr2; i++)
+        subArr2[i] = arr[middle + i + 1]
     
-    let i = 0, j = 0, k = start;
+    let i = 0, j = 0, k = start; // i is position in subArr1, j is position in subArr2, k is position in the full array
     
-    while (i < n1 && j < n2) {
-        if (L[i] <= M[j]) {
-            arr[k] = L[i];
+    while (i < lengthSubArr1 && j < lenghtSubArr2) {
+        if (subArr1[i] <= subArr2[j]) {
+            arr[k] = subArr1[i];
             i++;
         } else {
-            arr[k] = M[j];
+            arr[k] = subArr2[j];
             j++;
         }
         k++;
     }
 
-    while (i < n1) {
-        arr[k] = L[i];
+    while (i < lengthSubArr1) {
+        arr[k] = subArr1[i];
         i++, k++;
     }
 
-    while (j < n2) {
-        arr[k] = M[j];
+    while (j < lenghtSubArr2) {
+        arr[k] = subArr2[j];
         j++, k++;
     }
 }

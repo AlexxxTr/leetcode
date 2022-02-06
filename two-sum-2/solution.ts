@@ -20,4 +20,12 @@ function search(numbers: number[], target: number): number {
     return -1
 }
 
-console.log(twoSum([2,3,4], 6));
+function twoSum2(numbers: number[], target: number): number[] {
+    let i = 0, j = numbers.length - 1;
+    let sum = numbers[i] + numbers[j];
+    while (sum !== target) {
+        sum < target ? i++ : j--;
+        sum = numbers[i] + numbers[j];
+    }
+    return [i + 1, j + 1];
+}

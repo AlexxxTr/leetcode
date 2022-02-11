@@ -18,6 +18,3 @@ function maxScoreSightseeingPair2(values: number[]): number {
     }
     return max;
 }
-
-
-console.log(maxScoreSightseeingPair([1,2]));

@@ -12,5 +12,3 @@ function maxProduct(nums: number[]): number {
     }
     return result;
 }
-
-console.log(maxProduct([-2, 0, -1]));
